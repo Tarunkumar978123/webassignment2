@@ -1,0 +1,96 @@
+:root{
+  --bg: #f3f6fb;
+  --card: #ffffff;
+  --primary: #2b6ef6;
+  --muted: #6b7280;
+  --success: #16a34a;
+  --danger: #ef4444;
+  --radius: 12px;
+  --shadow: 0 6px 24px rgba(15,23,42,0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);
+  color:#0f172a;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:32px;
+}
+
+/* container */
+.container{
+  max-width:920px;
+  margin: 0 auto;
+}
+
+/* header */
+.header{
+  text-align:center;
+  margin-bottom:18px;
+}
+.header h1{margin:0;font-size:1.6rem}
+.header .subtitle{margin:6px 0 0;color:var(--muted)}
+
+/* card form */
+.form-card{
+  background:var(--card);
+  padding:24px;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  display:block;
+  gap:12px;
+}
+
+/* rows */
+.row{
+  margin-bottom:14px;
+  display:flex;
+  flex-direction:column;
+}
+.row label{font-weight:600;margin-bottom:6px}
+.row input[type="text"],
+.row input[type="email"],
+.row input[type="tel"],
+.row input[type="date"],
+.row select,
+.row textarea{
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid #e6e9ef;
+  outline:none;
+  font-size:0.95rem;
+}
+.row textarea{resize:vertical}
+.row input:focus, .row select:focus, .row textarea:focus{
+  box-shadow: 0 0 0 4px rgba(43,110,246,0.07);
+  border-color: var(--primary);
+}
+.two-col{display:flex;gap:12px}
+.two-col > div{flex:1}
+
+.inline-options{display:flex;gap:14px;align-items:center}
+.inline-options label{font-weight:500;color:var(--muted)}
+
+.required{color:var(--danger);margin-left:4px;font-weight:600}
+.hint{color:var(--muted);font-size:0.85rem;margin-top:6px}
+.error-msg{color:var(--danger);font-size:0.82rem;height:16px;margin-top:6px}
+
+/* actions */
+.actions{display:flex;gap:10px;align-items:center;justify-content:flex-end}
+.btn{padding:10px 16px;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+.btn.primary{background:var(--primary);color:white;box-shadow:0 6px 18px rgba(43,110,246,0.15)}
+.btn.light{background:white;border:1px solid #e6e9ef;color:var(--muted)}
+
+/* responsive */
+@media (max-width:640px){
+  .two-col{flex-direction:column}
+  .actions{flex-direction:column;align-items:stretch}
+  .actions .btn{width:100%}
+}
+
+/* footer */
+.footer{margin-top:12px;text-align:center;color:var(--muted);font-size:0.85rem}

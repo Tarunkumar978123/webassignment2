@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Online Registration Form</title>
+
+  <!-- jQuery CDN (can be replaced with local file) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-..." crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Online Application / Registration</h1>
+      <p class="subtitle">Fill the form and click Submit — your data will display on the next page.</p>
+    </header>
+
+    <form id="regForm" class="form-card" action="submit.php" method="post" enctype="multipart/form-data" novalidate>
+      <div class="row">
+        <label for="fullname">Full Name<span class="required">*</span></label>
+        <input id="fullname" name="fullname" type="text" placeholder="Enter full name" required />
+        <small class="error-msg" data-for="fullname"></small>
+      </div>
+
+      <div class="row">
+        <label for="email">Email<span class="required">*</span></label>
+        <input id="email" name="email" type="email" placeholder="example@mail.com" required />
+        <small class="error-msg" data-for="email"></small>
+      </div>
+
+      <div class="row two-col">
+        <div>
+          <label for="phone">Mobile Number<span class="required">*</span></label>
+          <input id="phone" name="phone" type="tel" placeholder="10-digit mobile" required />
+          <small class="error-msg" data-for="phone"></small>
+        </div>
+
+        <div>
+          <label for="dob">Date of Birth</label>
+          <input id="dob" name="dob" type="date" />
+        </div>
+      </div>
+
+      <div class="row">
+        <label>Gender</label>
+        <div class="inline-options">
+          <label><input type="radio" name="gender" value="Male" checked /> Male</label>
+          <label><input type="radio" name="gender" value="Female" /> Female</label>
+          <label><input type="radio" name="gender" value="Other" /> Other</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="address">Address</label>
+        <textarea id="address" name="address" rows="3" placeholder="Street, City, State, PIN"></textarea>
+      </div>
+
+      <div class="row">
+        <label for="course">Course Selection<span class="required">*</span></label>
+        <select id="course" name="course" required>
+          <option value="">-- Select course --</option>
+          <option>B.Sc Computer Science</option>
+          <option>BCA</option>
+          <option>MCA</option>
+          <option>B.E / B.Tech</option>
+          <option>Diploma</option>
+        </select>
+        <small class="error-msg" data-for="course"></small>
+      </div>
+
+      <div class="row">
+        <label for="photo">Upload Photo (optional)</label>
+        <input id="photo" name="photo" type="file" accept="image/*" />
+        <small class="hint">Max 2MB. JPG/PNG/GIF accepted.</small>
+      </div>
+
+      <div class="row actions">
+        <button type="submit" id="submitBtn" class="btn primary">Submit</button>
+        <button type="reset" class="btn light">Reset</button>
+      </div>
+    </form>
+
+    <footer class="footer">
+      <small>Made for assignment — HTML/CSS/JS/jQuery/PHP demo</small>
+    </footer>
+  </main>
+</body>
+</html>
